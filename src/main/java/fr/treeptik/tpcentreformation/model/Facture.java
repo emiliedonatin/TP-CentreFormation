@@ -34,8 +34,7 @@ public class Facture implements Serializable {
 	@Column(name = "NbrPlacesFacturees")
 	private Integer nbrPlacesFacturees;
 	
-	@OneToOne(mappedBy= "NumeroCommande")
-	private Commande commande;
+	
 
 	
 	public Facture() {
@@ -43,13 +42,13 @@ public class Facture implements Serializable {
 	}
 
 
-	public Facture(Integer numeroFacture, Date dateFacture, Integer montantFacture, Integer nbrPlacesFacturees, Commande commande) {
+	public Facture(Integer numeroFacture, Date dateFacture, Integer montantFacture, Integer nbrPlacesFacturees) {
 		super();
 		this.numeroFacture = numeroFacture;
 		this.dateFacture = dateFacture;
 		this.montantFacture = montantFacture;
 		this.nbrPlacesFacturees = nbrPlacesFacturees;
-		this.commande = commande;
+		
 	}
 
 
@@ -93,19 +92,12 @@ public class Facture implements Serializable {
 	}
 
 
-	public Commande getCommande() {
-		return commande;
-	}
-
-
-	public void setCommande(Commande commande) {
-		this.commande = commande;
-	}
+	
 
 
 	@Override
 	public String toString() {
-		return "Facture [numeroFacture=" + numeroFacture + ", dateFacture=" + dateFacture + ", montantFacture=" + montantFacture + ", nbrPlacesFacturees=" + nbrPlacesFacturees + ", commande=" + commande + "]";
+		return "Facture [numeroFacture=" + numeroFacture + ", dateFacture=" + dateFacture + ", montantFacture=" + montantFacture + ", nbrPlacesFacturees=" + nbrPlacesFacturees + "]";
 	}
 
 
@@ -113,7 +105,6 @@ public class Facture implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((commande == null) ? 0 : commande.hashCode());
 		result = prime * result + ((dateFacture == null) ? 0 : dateFacture.hashCode());
 		result = prime * result + ((montantFacture == null) ? 0 : montantFacture.hashCode());
 		result = prime * result + ((nbrPlacesFacturees == null) ? 0 : nbrPlacesFacturees.hashCode());
@@ -131,11 +122,6 @@ public class Facture implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Facture other = (Facture) obj;
-		if (commande == null) {
-			if (other.commande != null)
-				return false;
-		} else if (!commande.equals(other.commande))
-			return false;
 		if (dateFacture == null) {
 			if (other.dateFacture != null)
 				return false;
@@ -158,6 +144,12 @@ public class Facture implements Serializable {
 			return false;
 		return true;
 	}
+
+
+	
+
+
+	
 	
 	
 	
