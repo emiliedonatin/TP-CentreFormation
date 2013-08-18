@@ -18,7 +18,7 @@ import fr.treeptik.tpcentreformation.exception.DAOException;
 import fr.treeptik.tpcentreformation.model.Commande;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:applicationContext.xml" })
+@ContextConfiguration("/applicationContext-test.xml")
 public class TestGenericDAO {
 
 	

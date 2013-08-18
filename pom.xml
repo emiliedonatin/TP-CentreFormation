@@ -8,35 +8,34 @@
 	<description>TP java pour illustrer spring - hibernate - maven</description>
 
 	<properties>
-		<version.java>1.6</version.java>
-		<hibernate.version>4.2.3.Final</hibernate.version>
-		<spring.version>3.2.3.RELEASE</spring.version>
+		<version.java>1.7</version.java>
+		<version.hibernate>4.2.3.Final</version.hibernate>
+		<version.spring>3.2.3.RELEASE</version.spring>
 		<version.maven.jar.plugin>2.4</version.maven.jar.plugin>
 		<version.maven.exec.plugin>1.2.1</version.maven.exec.plugin>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<version.mysql>5.1.26</version.mysql>
+		<version.junit>4.8.2</version.junit>
+		<version.dbcp>1.4</version.dbcp>
 	</properties>
 
-
-
 	<dependencies>
-
-
 		<!-- Spring all dependencies -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-			<version>${spring.version}</version>
+			<version>${version.spring}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>${spring.version}</version>
+			<version>${version.spring}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>${spring.version}</version>
+			<version>${version.spring}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -46,69 +45,84 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
-			<version>${spring.version}</version>
+			<version>${version.spring}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
-			<version>${spring.version}</version>
+			<version>${version.spring}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>${spring.version}</version>
+			<version>${version.spring}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
-			<version>${spring.version}</version>
+			<version>${version.spring}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
-			<version>${spring.version}</version>
+			<version>${version.spring}</version>
 		</dependency>
 
-		<!-- Dépendance Hibernate (hibernate-core et hibernate-entitymanager)  -->
-		
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>4.2.3.Final</version>
-		</dependency>
-
+		<!-- Dépendance Hibernate (hibernate-core et hibernate-entitymanager) -->
+		<!-- Hibernate core est volontairement absent de la liste des dependances 
+			car il est lui meme une dependance de hibernate-entitymanager -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.2.3.Final</version>
+			<version>${version.hibernate}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>${version.dbcp}</version>
 		</dependency>
 
 		<!-- Base de données MYSQL -->
-
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.26</version>
+			<version>${version.mysql}</version>
 		</dependency>
-		
-		
-		<!-- Junit -->
 
+		<!-- Junit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.8.2</version>
+			<version>${version.junit}</version>
 			<scope>test</scope>
 		</dependency>
-
-
 	</dependencies>
 
-
-
-
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+
+			<resource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<source>${version.java}</source>
+					<target>${version.java}</target>
+				</configuration>
+			</plugin>
+
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
@@ -126,6 +140,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>
