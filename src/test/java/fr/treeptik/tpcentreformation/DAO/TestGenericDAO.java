@@ -36,14 +36,8 @@ public class TestGenericDAO {
 	public void testMapping(){
 		
 		Commande commande = new Commande(null, new Date(), 2, null, null, null);
-		try {
-			commande = commandeDAO.save(commande);
-			Assert.assertNotNull(commande);
-		} catch (DAOException e) {
-			
-			e.printStackTrace();
-			Assert.fail(e.getMessage());
-		}
+		entityManager.persist(commande);
+		
 		
 	
 	

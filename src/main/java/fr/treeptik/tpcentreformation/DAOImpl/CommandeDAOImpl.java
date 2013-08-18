@@ -18,9 +18,9 @@ public class CommandeDAOImpl extends GenericDAOImpl<Commande, Integer> implement
 
 	public List<Commande> findbyNomSociete(String nom) throws DAOException {
 		
-		entityManager.createQuery("Select c from Commande c Right Join Fetch c.  ")
-		
 		return null;
 	}
+
+	
 
 }
