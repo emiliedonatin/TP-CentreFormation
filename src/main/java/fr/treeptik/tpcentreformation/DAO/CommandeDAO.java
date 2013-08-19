@@ -7,6 +7,7 @@ import fr.treeptik.tpcentreformation.model.Commande;
 
 public interface CommandeDAO extends GenericDAO<Commande, Integer> {
 	
-	List<Commande> findbyNomSociete(String nom) throws DAOException;
+	List<Commande> findbyNomSociete(String nomSociete) throws DAOException;
+	
 
 }
