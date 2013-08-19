@@ -69,12 +69,11 @@
 		</dependency>
 
 		<!-- Dépendance Hibernate (hibernate-core et hibernate-entitymanager) -->
-		<!-- Hibernate core est volontairement absent de la liste des dependances 
-			car il est lui meme une dependance de hibernate-entitymanager -->
+		
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>${version.hibernate}</version>
+			<version>4.2.3.Final</version>
 		</dependency>
 
 		<dependency>
@@ -100,17 +99,7 @@
 	</dependencies>
 
 	<build>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
-			</resource>
-
-			<resource>
-				<directory>src/test/resources</directory>
-				<filtering>true</filtering>
-			</resource>
-		</resources>
+		
 
 		<plugins>
 			<plugin>

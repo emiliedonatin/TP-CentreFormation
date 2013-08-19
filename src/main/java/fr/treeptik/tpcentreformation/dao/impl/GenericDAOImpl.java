@@ -1,11 +1,11 @@
-package fr.treeptik.tpcentreformation.DAOImpl;
+package fr.treeptik.tpcentreformation.dao.impl;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import fr.treeptik.tpcentreformation.DAO.GenericDAO;
+import fr.treeptik.tpcentreformation.dao.GenericDAO;
 import fr.treeptik.tpcentreformation.exception.DAOException;
 
 public class GenericDAOImpl<T, PK> implements GenericDAO<T, PK> {

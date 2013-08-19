@@ -1,10 +1,10 @@
-package fr.treeptik.tpcentreformation.DAOImpl;
+package fr.treeptik.tpcentreformation.dao.impl;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import fr.treeptik.tpcentreformation.DAO.SocieteDAO;
+import fr.treeptik.tpcentreformation.dao.SocieteDAO;
 import fr.treeptik.tpcentreformation.exception.DAOException;
 import fr.treeptik.tpcentreformation.model.Societe;
 

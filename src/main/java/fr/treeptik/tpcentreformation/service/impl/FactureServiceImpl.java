@@ -1,8 +1,8 @@
-package fr.treeptik.tpcentreformation.serviceImpl;
+package fr.treeptik.tpcentreformation.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import fr.treeptik.tpcentreformation.DAO.FactureDAO;
+import fr.treeptik.tpcentreformation.dao.FactureDAO;
 import fr.treeptik.tpcentreformation.model.Facture;
 import fr.treeptik.tpcentreformation.service.FactureService;
 

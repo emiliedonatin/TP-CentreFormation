@@ -1,4 +1,4 @@
-package fr.treeptik.tpcentreformation.DAO;
+package fr.treeptik.tpcentreformation.dao;
 
 import fr.treeptik.tpcentreformation.model.Sessions;
 

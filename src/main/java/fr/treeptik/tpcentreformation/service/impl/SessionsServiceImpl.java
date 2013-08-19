@@ -1,8 +1,8 @@
-package fr.treeptik.tpcentreformation.serviceImpl;
+package fr.treeptik.tpcentreformation.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import fr.treeptik.tpcentreformation.DAO.SessionsDAO;
+import fr.treeptik.tpcentreformation.dao.SessionsDAO;
 import fr.treeptik.tpcentreformation.model.Sessions;
 import fr.treeptik.tpcentreformation.service.SessionsService;
 

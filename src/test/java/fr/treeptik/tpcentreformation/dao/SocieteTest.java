@@ -1,4 +1,4 @@
-package fr.treeptik.tpcentreformation.DAO;
+package fr.treeptik.tpcentreformation.dao;
 
 import java.util.List;
 
@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import fr.treeptik.tpcentreformation.dao.SocieteDAO;
 import fr.treeptik.tpcentreformation.exception.DAOException;
 import fr.treeptik.tpcentreformation.model.Societe;
 

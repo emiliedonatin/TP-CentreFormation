@@ -1,4 +1,4 @@
-package fr.treeptik.tpcentreformation.DAO;
+package fr.treeptik.tpcentreformation.dao;
 
 import java.util.List;
 

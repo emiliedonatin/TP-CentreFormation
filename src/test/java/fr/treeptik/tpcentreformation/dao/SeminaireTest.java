@@ -1,4 +1,4 @@
-package fr.treeptik.tpcentreformation.DAO;
+package fr.treeptik.tpcentreformation.dao;
 
 import java.util.List;
 
@@ -9,27 +9,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import fr.treeptik.tpcentreformation.dao.SeminaireDAO;
 import fr.treeptik.tpcentreformation.exception.DAOException;
-import fr.treeptik.tpcentreformation.model.Facture;
-
+import fr.treeptik.tpcentreformation.model.Seminaire;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("/applicationContext.xml")
-public class FactureTest {
-	
+public class SeminaireTest {
+
 	@Autowired
-	private FactureDAO factureDAO;
+	private SeminaireDAO seminaireDAO;
 	
 	@Test
 	public void testFindAll(){
 		
 		try {
-			List<Facture> factures = factureDAO.findAll();
+			List<Seminaire> seminaires = seminaireDAO.findAll();
 			
-			for (Facture facture : factures) {
-				System.out.println("Numéro de la facture " + facture.getNumeroFacture());
-				System.out.println("Date de la facture " + facture.getDateFacture());
-				System.out.println("Nombre de place facturées " + facture.getNbrPlacesFacturees());
+			for (Seminaire seminaire : seminaires) {
+				System.out.println("Code du séminaire " + seminaire.getCodeSeminaire());
+				System.out.println("Nombre de places disponibles " + seminaire.getNbPlacesSeminaire());
 			}
 			
 		} catch (DAOException e) {
@@ -37,5 +36,5 @@ public class FactureTest {
 		}
 		
 	}
-
+	
 }

@@ -1,4 +1,4 @@
-package fr.treeptik.tpcentreformation.DAOImpl;
+package fr.treeptik.tpcentreformation.dao.impl;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
-import fr.treeptik.tpcentreformation.DAO.CommandeDAO;
+import fr.treeptik.tpcentreformation.dao.CommandeDAO;
 import fr.treeptik.tpcentreformation.exception.DAOException;
 import fr.treeptik.tpcentreformation.model.Commande;
 

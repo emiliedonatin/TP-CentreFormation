@@ -1,4 +1,4 @@
-package fr.treeptik.tpcentreformation.DAO;
+package fr.treeptik.tpcentreformation.dao;
 
 import java.util.Date;
 
@@ -14,6 +14,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import fr.treeptik.tpcentreformation.dao.CommandeDAO;
 import fr.treeptik.tpcentreformation.exception.DAOException;
 import fr.treeptik.tpcentreformation.model.Commande;
 

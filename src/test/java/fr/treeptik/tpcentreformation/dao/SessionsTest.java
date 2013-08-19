@@ -1,4 +1,4 @@
-package fr.treeptik.tpcentreformation.DAO;
+package fr.treeptik.tpcentreformation.dao;
 
 import java.util.List;
 
@@ -9,31 +9,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import fr.treeptik.tpcentreformation.dao.SessionsDAO;
 import fr.treeptik.tpcentreformation.exception.DAOException;
-import fr.treeptik.tpcentreformation.model.Seminaire;
+import fr.treeptik.tpcentreformation.model.Sessions;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("/applicationContext.xml")
-public class SeminaireTest {
-
+public class SessionsTest {
+	
 	@Autowired
-	private SeminaireDAO seminaireDAO;
+	private SessionsDAO sessionsDAO;
 	
 	@Test
 	public void testFindAll(){
 		
 		try {
-			List<Seminaire> seminaires = seminaireDAO.findAll();
+			List<Sessions> listSessions = sessionsDAO.findAll();
 			
-			for (Seminaire seminaire : seminaires) {
-				System.out.println("Code du séminaire " + seminaire.getCodeSeminaire());
-				System.out.println("Nombre de places disponibles " + seminaire.getNbPlacesSeminaire());
+			for (Sessions sessions : listSessions) {
+				System.out.println("Numéro de la session " + sessions.getNumeroSession());
+				System.out.println("Date de la session " + sessions.getDateSession());
 			}
 			
 		} catch (DAOException e) {
 			Assert.fail(e.getMessage());
 		}
-		
 	}
-	
+
 }

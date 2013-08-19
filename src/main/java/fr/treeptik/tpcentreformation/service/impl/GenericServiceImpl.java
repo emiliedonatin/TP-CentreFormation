@@ -1,10 +1,10 @@
-package fr.treeptik.tpcentreformation.serviceImpl;
+package fr.treeptik.tpcentreformation.service.impl;
 
 import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.treeptik.tpcentreformation.DAO.GenericDAO;
+import fr.treeptik.tpcentreformation.dao.GenericDAO;
 import fr.treeptik.tpcentreformation.exception.DAOException;
 import fr.treeptik.tpcentreformation.exception.ServiceException;
 import fr.treeptik.tpcentreformation.service.GenericService;
